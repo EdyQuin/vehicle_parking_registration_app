@@ -4,19 +4,20 @@ import pandas as pd
 
 # Create a title for your application using markdown syntax and the Streamlit
 # `write` function.
+st.image('LOGO.png')
 st.write("# Car Registration Web Application")
 
 # Create an opening sentence for your application using regular text and the
 # Streamlit `write` function.
-st.write("This Web Application allows you to register your vehicle as a vistor.")
+st.write("This Web Application allows you to register your vehicle for private parking.")
 
 with st.form("Vehicle_Registration_Form"):
     st.write("Vehicle Information")
-    text = st.text_input("Enter your vehicle information here. Unit visting, license plate number, car make & year, car color, and parking spot number.")
+    text = st.text_input("Enter your vehicle information here. Unit, license plate number, car make model & year, car color, and parking spot number.")
 
     library = st.selectbox(
-    "For how many days are you visiting?",
-    ("1 day", "5 days", "More than 5 days")
+    "How long is your parking space agreement?",
+    ("1 year", "3 months", "6 months")
 )
 
     picture = st.file_uploader("Vehicle photo", type=['png', 'jpg'], accept_multiple_files=False, key=None, help="Snap a photo of vehicle and upload it", on_change=None, args=None, kwargs=None, disabled=False)
@@ -29,7 +30,4 @@ with st.form("Vehicle_Registration_Form"):
 st.write("## Please note, vehicles not properly registered will be towed at the owner's expense.")
 
 st.button("Click Here For Questions")
-
-st.image('LOGO.png')
-
 
